@@ -1,0 +1,65 @@
+2025-03-22 14:39:35,903 - csv_analyzer - INFO - Model initialized
+2025-03-22 14:39:35,908 - csv_analyzer - INFO - CSV Agent created
+2025-03-22 14:39:36,072 - csv_analyzer - INFO - Starting the application
+2025-03-22 14:39:36,216 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-22 14:39:36,236 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-22 14:39:37,169 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-22 14:39:49,765 - csv_analyzer - INFO - Updating column dropdowns
+2025-03-22 14:39:49,768 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction.csv
+2025-03-22 14:39:49,862 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-22 14:39:59,970 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-22 14:39:59,971 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction.csv
+2025-03-22 14:40:00,043 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-22 14:40:00,044 - csv_analyzer - INFO - Processing question: number of columns 
+2025-03-22 14:40:00,047 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-22 14:40:00,087 - csv_analyzer - INFO - Running agent with context
+2025-03-22 14:40:00,089 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-22 14:40:11,912 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:40:11,921 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-22 14:40:12,217 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:40:12,918 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:40:12,920 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-22 14:40:13,370 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:40:13,375 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (1) for result validation
+2025-03-22 14:40:53,325 - csv_analyzer - INFO - Application closed
+2025-03-22 14:41:17,457 - csv_analyzer - INFO - Model initialized
+2025-03-22 14:41:17,467 - csv_analyzer - INFO - CSV Agent created
+2025-03-22 14:41:17,714 - csv_analyzer - INFO - Starting the application
+2025-03-22 14:41:17,887 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-22 14:41:17,907 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-22 14:41:19,411 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-22 14:41:25,916 - csv_analyzer - INFO - Updating column dropdowns
+2025-03-22 14:41:25,916 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction.csv
+2025-03-22 14:41:26,073 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-22 14:41:44,023 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-22 14:41:44,025 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction.csv
+2025-03-22 14:41:44,113 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-22 14:41:44,117 - csv_analyzer - INFO - Processing question: how many number of columns
+2025-03-22 14:41:44,119 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-22 14:41:44,174 - csv_analyzer - INFO - Running agent with context
+2025-03-22 14:41:44,179 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-22 14:41:45,247 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:41:45,259 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-22 14:41:45,646 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:41:46,461 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:42:03,689 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:42:05,165 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:42:05,167 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-22 14:42:06,047 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:42:07,203 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:42:07,205 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-22 14:42:07,206 - csv_analyzer - INFO - Tool called: get_data_sample with n=5
+2025-03-22 14:42:09,474 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-22 14:42:09,479 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (3) for result validation
+2025-03-23 11:49:08,319 - csv_analyzer - INFO - Model initialized
+2025-03-23 11:49:08,319 - csv_analyzer - INFO - CSV Agent created
+2025-03-23 11:49:08,506 - csv_analyzer - INFO - Starting the application
+2025-03-23 11:49:08,738 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 11:49:08,859 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 11:49:09,588 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 11:56:58,846 - csv_analyzer - INFO - Application closed
+2025-03-23 11:58:38,468 - csv_analyzer - INFO - Model initialized
+2025-03-23 11:58:38,472 - csv_analyzer - INFO - CSV Agent created
+2025-03-23 11:58:38,716 - csv_analyzer - INFO - Starting the application
+2025-03-23 11:58:38,954 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 11:58:39,104 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
