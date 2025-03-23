@@ -63,3 +63,634 @@
 2025-03-23 11:58:38,716 - csv_analyzer - INFO - Starting the application
 2025-03-23 11:58:38,954 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
 2025-03-23 11:58:39,104 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 11:58:39,729 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:00:45,339 - csv_analyzer - INFO - Updating column dropdowns
+2025-03-23 12:00:45,340 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:00:45,349 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:00:51,716 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:00:51,718 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:00:51,721 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:00:51,721 - csv_analyzer - INFO - Processing question: rows
+2025-03-23 12:00:51,721 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:00:51,751 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:00:51,753 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:00:54,290 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:01,473 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:02,086 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:02,090 - csv_analyzer - INFO - Tool called: get_row_count
+2025-03-23 12:01:02,421 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:03,123 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:03,126 - csv_analyzer - INFO - Tool called: get_row_count
+2025-03-23 12:01:03,416 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:04,026 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:04,026 - csv_analyzer - INFO - Tool called: get_row_count
+2025-03-23 12:01:04,214 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:01:04,216 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (3) for result validation
+2025-03-23 12:02:35,609 - csv_analyzer - INFO - Application closed
+2025-03-23 12:27:18,522 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:27:44,243 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:27:44,251 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:27:44,412 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:27:44,545 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:27:44,567 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:27:45,464 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:29:19,749 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:29:19,751 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:29:19,761 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:29:31,782 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:29:31,782 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:29:31,785 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:29:31,787 - csv_analyzer - INFO - Processing question: no of columns
+2025-03-23 12:29:31,787 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:29:31,794 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:29:31,801 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:29:41,493 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:41,506 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:29:41,507 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:29:41,846 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:42,474 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:45,146 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:45,705 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:45,708 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:29:45,709 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:29:45,927 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:46,535 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:46,538 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:29:46,539 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:29:46,758 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:47,366 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:47,369 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:29:47,370 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:29:47,644 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:48,231 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:48,233 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:29:48,233 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:29:48,533 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:29:48,536 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (5) for result validation
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 273, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 375, in run
+    async with self.stream(ctx):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 206, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 390, in stream
+    async for _event in stream:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 427, in _run_stream
+    async for event in self._events_iterator:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 421, in _run_stream
+    self._next_node = await self._handle_text_response(ctx, texts)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 533, in _handle_text_response
+    ctx.state.increment_retries(ctx.deps.max_result_retries)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 71, in increment_retries
+    raise exceptions.UnexpectedModelBehavior(
+pydantic_ai.exceptions.UnexpectedModelBehavior: Exceeded maximum retries (5) for result validation
+2025-03-23 12:32:03,288 - csv_analyzer - INFO - Application closed
+2025-03-23 12:32:09,619 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:32:09,624 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:32:09,829 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:32:09,957 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:32:09,980 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:32:10,853 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:32:26,695 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:32:26,701 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:32:26,709 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:34:24,941 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:34:24,941 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:34:24,943 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:34:24,943 - csv_analyzer - INFO - Processing question: no of columns
+
+2025-03-23 12:34:24,945 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:34:24,955 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:34:24,959 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:34:25,309 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-03-23 12:34:25,309 - csv_analyzer - ERROR - Error in LLM processing: status_code: 400, model_name: deepseek-r1:7b, body: {'message': 'registry.ollama.ai/library/deepseek-r1:7b does not support tools', 'type': 'api_error', 'param': None, 'code': None}
+Traceback (most recent call last):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\models\openai.py", line 273, in _completions_create
+    return await self.client.chat.completions.create(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\chat\completions\completions.py", line 2000, in create
+    return await self._post(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1767, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1461, in request
+    return await self._request(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1562, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'registry.ollama.ai/library/deepseek-r1:7b does not support tools', 'type': 'api_error', 'param': None, 'code': None}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 273, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 262, in run
+    return await self._make_request(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 314, in _make_request
+    model_response, request_usage = await ctx.deps.model.request(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\models\openai.py", line 201, in request
+    response = await self._completions_create(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\models\openai.py", line 294, in _completions_create
+    raise ModelHTTPError(status_code=status_code, model_name=self.model_name, body=e.body) from e
+pydantic_ai.exceptions.ModelHTTPError: status_code: 400, model_name: deepseek-r1:7b, body: {'message': 'registry.ollama.ai/library/deepseek-r1:7b does not support tools', 'type': 'api_error', 'param': None, 'code': None}
+2025-03-23 12:34:39,641 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:34:39,642 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:34:39,644 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:34:39,644 - csv_analyzer - INFO - Processing question: no of rows
+
+2025-03-23 12:34:39,644 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:34:39,650 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:34:39,652 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:34:39,966 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-03-23 12:34:39,969 - csv_analyzer - ERROR - Error in LLM processing: status_code: 400, model_name: deepseek-r1:7b, body: {'message': 'registry.ollama.ai/library/deepseek-r1:7b does not support tools', 'type': 'api_error', 'param': None, 'code': None}
+Traceback (most recent call last):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\models\openai.py", line 273, in _completions_create
+    return await self.client.chat.completions.create(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\resources\chat\completions\completions.py", line 2000, in create
+    return await self._post(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1767, in post
+    return await self.request(cast_to, opts, stream=stream, stream_cls=stream_cls)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1461, in request
+    return await self._request(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\openai\_base_client.py", line 1562, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.BadRequestError: Error code: 400 - {'error': {'message': 'registry.ollama.ai/library/deepseek-r1:7b does not support tools', 'type': 'api_error', 'param': None, 'code': None}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 273, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 262, in run
+    return await self._make_request(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 314, in _make_request
+    model_response, request_usage = await ctx.deps.model.request(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\models\openai.py", line 201, in request
+    response = await self._completions_create(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\models\openai.py", line 294, in _completions_create
+    raise ModelHTTPError(status_code=status_code, model_name=self.model_name, body=e.body) from e
+pydantic_ai.exceptions.ModelHTTPError: status_code: 400, model_name: deepseek-r1:7b, body: {'message': 'registry.ollama.ai/library/deepseek-r1:7b does not support tools', 'type': 'api_error', 'param': None, 'code': None}
+2025-03-23 12:35:15,354 - csv_analyzer - INFO - Application closed
+2025-03-23 12:35:21,404 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:35:21,407 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:35:21,586 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:35:21,730 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:35:21,756 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:35:22,747 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:35:45,057 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:35:45,063 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:35:45,075 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:35:54,057 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:35:54,059 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:35:54,061 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:35:54,063 - csv_analyzer - INFO - Processing question: name of columns
+2025-03-23 12:35:54,063 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:35:54,069 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:35:54,073 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:36:03,845 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:03,856 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:36:03,857 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:36:04,473 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:04,955 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:04,960 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:36:04,961 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:36:05,173 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:05,722 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:05,726 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:36:05,727 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:36:08,304 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:08,855 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:08,858 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:36:08,859 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:36:11,441 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:12,037 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:12,039 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:36:12,041 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:36:14,658 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:15,332 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:15,335 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:36:15,336 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:36:18,217 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:36:18,219 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (5) for result validation
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 273, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 375, in run
+    async with self.stream(ctx):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 206, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 390, in stream
+    async for _event in stream:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 427, in _run_stream
+    async for event in self._events_iterator:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 421, in _run_stream
+    self._next_node = await self._handle_text_response(ctx, texts)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 533, in _handle_text_response
+    ctx.state.increment_retries(ctx.deps.max_result_retries)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 71, in increment_retries
+    raise exceptions.UnexpectedModelBehavior(
+pydantic_ai.exceptions.UnexpectedModelBehavior: Exceeded maximum retries (5) for result validation
+2025-03-23 12:40:04,981 - csv_analyzer - INFO - Application closed
+2025-03-23 12:40:11,780 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:40:11,785 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:40:11,963 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:40:12,100 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:40:12,120 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:40:13,237 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:40:20,232 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:40:20,234 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction.csv
+2025-03-23 12:40:20,380 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-23 12:40:28,593 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:40:28,594 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction.csv
+2025-03-23 12:40:28,683 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-23 12:40:28,685 - csv_analyzer - INFO - Processing question: get column names
+2025-03-23 12:40:28,685 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:40:28,699 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:40:28,704 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:40:30,005 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:30,018 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:40:30,018 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:40:32,450 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:32,970 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:33,576 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:33,581 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:40:33,581 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:40:33,837 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:34,347 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:34,351 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:40:34,353 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:40:34,586 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:35,107 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:35,107 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:40:35,107 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:40:35,343 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:35,937 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:35,939 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:40:35,940 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:40:36,353 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:40:36,358 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (5) for result validation
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 273, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 375, in run
+    async with self.stream(ctx):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 206, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 390, in stream
+    async for _event in stream:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 427, in _run_stream
+    async for event in self._events_iterator:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 421, in _run_stream
+    self._next_node = await self._handle_text_response(ctx, texts)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 533, in _handle_text_response
+    ctx.state.increment_retries(ctx.deps.max_result_retries)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 71, in increment_retries
+    raise exceptions.UnexpectedModelBehavior(
+pydantic_ai.exceptions.UnexpectedModelBehavior: Exceeded maximum retries (5) for result validation
+2025-03-23 12:41:12,220 - csv_analyzer - INFO - Application closed
+2025-03-23 12:41:18,214 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:41:18,224 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:41:18,400 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:41:18,522 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:41:18,544 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:41:19,477 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:41:27,387 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:41:27,387 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:41:27,397 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:41:35,988 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:41:35,989 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:41:35,989 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:41:35,989 - csv_analyzer - INFO - Processing question: what are the column names
+2025-03-23 12:41:35,989 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:41:36,000 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:41:36,005 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:41:37,317 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:37,327 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:41:37,327 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:41:37,985 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:38,521 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:38,523 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:41:38,524 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:41:38,837 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:39,460 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:39,691 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:40,338 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:40,776 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:41,380 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:41,383 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:41:41,383 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:41:41,624 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:42,375 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:42,802 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:41:42,803 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (5) for result validation
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 273, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 375, in run
+    async with self.stream(ctx):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 206, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 390, in stream
+    async for _event in stream:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 427, in _run_stream
+    async for event in self._events_iterator:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 421, in _run_stream
+    self._next_node = await self._handle_text_response(ctx, texts)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 533, in _handle_text_response
+    ctx.state.increment_retries(ctx.deps.max_result_retries)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 71, in increment_retries
+    raise exceptions.UnexpectedModelBehavior(
+pydantic_ai.exceptions.UnexpectedModelBehavior: Exceeded maximum retries (5) for result validation
+2025-03-23 12:46:25,167 - csv_analyzer - INFO - Application closed
+2025-03-23 12:46:32,255 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:46:32,258 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:46:32,425 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:46:32,551 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:46:32,573 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:46:33,563 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:46:45,754 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:46:45,754 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction 1.csv
+2025-03-23 12:46:45,857 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-23 12:46:53,114 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:46:53,115 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\00ea71be03992402ce8a9ca332774a44fed148e314ff51244ce9ed44a1315227\car_price_prediction 1.csv
+2025-03-23 12:46:53,180 - csv_analyzer - INFO - CSV loaded successfully: 19237 rows, 18 columns
+2025-03-23 12:46:53,180 - csv_analyzer - INFO - Processing question: get column names
+2025-03-23 12:46:53,180 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:46:53,192 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:46:53,195 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:47:02,944 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:02,952 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:47:02,953 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:47:04,256 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:04,806 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:04,808 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:47:04,809 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:47:05,042 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:05,569 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:05,571 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:47:05,572 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:47:05,826 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:06,424 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:06,426 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:47:06,428 - csv_analyzer - INFO - Returning 18 columns
+2025-03-23 12:47:06,721 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:47:06,724 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (3) for result validation
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 272, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 375, in run
+    async with self.stream(ctx):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 206, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 390, in stream
+    async for _event in stream:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 427, in _run_stream
+    async for event in self._events_iterator:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 421, in _run_stream
+    self._next_node = await self._handle_text_response(ctx, texts)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 533, in _handle_text_response
+    ctx.state.increment_retries(ctx.deps.max_result_retries)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 71, in increment_retries
+    raise exceptions.UnexpectedModelBehavior(
+pydantic_ai.exceptions.UnexpectedModelBehavior: Exceeded maximum retries (3) for result validation
+2025-03-23 12:49:39,969 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:49:47,221 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:49:47,221 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:49:47,226 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:49:50,476 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:49:50,478 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:49:50,481 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:49:50,481 - csv_analyzer - INFO - Processing question: get column names
+2025-03-23 12:49:50,481 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:49:50,485 - csv_analyzer - INFO - Running agent with context
+2025-03-23 12:49:50,488 - csv_analyzer - INFO - Adding dataframe context to system prompt
+2025-03-23 12:49:51,748 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:51,751 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:49:51,751 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:49:52,357 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:52,900 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:52,903 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:49:52,904 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:49:53,285 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:53,879 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:53,882 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:49:53,882 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:49:54,268 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:54,876 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:54,878 - csv_analyzer - INFO - Tool called: get_column_names
+2025-03-23 12:49:54,878 - csv_analyzer - INFO - Returning 4 columns
+2025-03-23 12:49:55,114 - httpx - INFO - HTTP Request: POST http://localhost:11434/v1/chat/completions "HTTP/1.1 200 OK"
+2025-03-23 12:49:55,117 - csv_analyzer - ERROR - Error in LLM processing: Exceeded maximum retries (3) for result validation
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 272, in answer_question
+    response = csv_agent.run_sync(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 570, in run_sync
+    return get_event_loop().run_until_complete(
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\asyncio\base_events.py", line 649, in run_until_complete
+    return future.result()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 327, in run
+    async for _ in agent_run:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\agent.py", line 1414, in __anext__
+    next_node = await self._graph_run.__anext__()
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 782, in __anext__
+    return await self.next(self._next_node)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_graph\graph.py", line 760, in next
+    self._next_node = await node.run(ctx)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 375, in run
+    async with self.stream(ctx):
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\contextlib.py", line 206, in __aexit__
+    await anext(self.gen)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 390, in stream
+    async for _event in stream:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 427, in _run_stream
+    async for event in self._events_iterator:
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 421, in _run_stream
+    self._next_node = await self._handle_text_response(ctx, texts)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 533, in _handle_text_response
+    ctx.state.increment_retries(ctx.deps.max_result_retries)
+  File "C:\Users\sudar\AppData\Local\Programs\Python\Python310\lib\site-packages\pydantic_ai\_agent_graph.py", line 71, in increment_retries
+    raise exceptions.UnexpectedModelBehavior(
+pydantic_ai.exceptions.UnexpectedModelBehavior: Exceeded maximum retries (3) for result validation
+2025-03-23 12:56:09,986 - csv_analyzer - INFO - Application closed
+2025-03-23 12:56:17,697 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:56:17,703 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:56:17,903 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:56:18,035 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:56:18,056 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:56:18,996 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:56:37,165 - csv_analyzer - INFO - Application closed
+2025-03-23 12:56:46,209 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:56:46,214 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:56:46,404 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:56:46,549 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:56:46,569 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:56:47,418 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:56:56,860 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:56:56,860 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:56:56,870 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:57:09,032 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:57:09,032 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:57:09,037 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:57:09,037 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:57:09,037 - csv_analyzer - ERROR - Failed to get answer from LLM: too many values to unpack (expected 2)
+Traceback (most recent call last):
+  File "D:\repo\pydantic\test.py", line 344, in process_csv
+    answer, code_used = answer_question(df, question)
+ValueError: too many values to unpack (expected 2)
+2025-03-23 12:58:37,737 - csv_analyzer - INFO - Application closed
+2025-03-23 12:58:43,898 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:58:43,905 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:58:44,068 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:58:44,207 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:58:44,233 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:58:45,257 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:58:55,034 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:58:55,034 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:58:55,048 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:59:04,772 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:59:04,773 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:59:04,774 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:59:04,774 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 12:59:23,422 - csv_analyzer - INFO - Application closed
+2025-03-23 12:59:29,474 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 12:59:29,483 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 12:59:29,657 - csv_analyzer - INFO - Starting the application
+2025-03-23 12:59:29,805 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 12:59:29,829 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 12:59:31,017 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 12:59:38,108 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 12:59:38,108 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:59:38,122 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:59:42,578 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 12:59:42,578 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 12:59:42,581 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 12:59:42,581 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 13:02:13,105 - csv_analyzer - INFO - Application closed
+2025-03-23 13:49:47,813 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 13:49:47,819 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 13:49:49,077 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 13:52:03,311 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 13:52:03,314 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 13:52:03,479 - csv_analyzer - INFO - Starting the application
+2025-03-23 13:52:03,662 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 13:52:03,698 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 13:52:04,730 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 13:52:16,100 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 13:52:16,100 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 13:52:16,100 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 13:52:25,158 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 13:52:25,158 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 13:52:25,161 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 13:52:25,161 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 13:53:39,975 - csv_analyzer - INFO - Application closed
+2025-03-23 13:53:45,988 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 13:53:45,990 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 13:53:46,142 - csv_analyzer - INFO - Starting the application
+2025-03-23 13:53:46,259 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 13:53:46,273 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 13:53:47,444 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 13:54:18,903 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 13:54:18,903 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 13:54:18,903 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 13:54:24,984 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 13:54:24,984 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 13:54:24,988 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 13:54:24,988 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 13:58:00,342 - csv_analyzer - INFO - Application closed
+2025-03-23 13:58:07,031 - csv_analyzer - INFO - Model initialized with enhanced configuration
+2025-03-23 13:58:07,041 - csv_analyzer - INFO - CSV Agent created with optimized configuration
+2025-03-23 13:58:07,192 - csv_analyzer - INFO - Starting the application
+2025-03-23 13:58:07,320 - httpx - INFO - HTTP Request: GET http://127.0.0.1:7860/gradio_api/startup-events "HTTP/1.1 200 OK"
+2025-03-23 13:58:07,328 - httpx - INFO - HTTP Request: HEAD http://127.0.0.1:7860/ "HTTP/1.1 200 OK"
+2025-03-23 13:58:08,462 - httpx - INFO - HTTP Request: GET https://api.gradio.app/pkg-version "HTTP/1.1 200 OK"
+2025-03-23 13:58:15,727 - csv_analyzer - INFO - Updating interface from uploaded file
+2025-03-23 13:58:15,740 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 13:58:15,744 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 13:58:29,322 - csv_analyzer - INFO - Processing CSV file and question
+2025-03-23 13:58:29,322 - csv_analyzer - INFO - Validating CSV file: C:\Users\sudar\AppData\Local\Temp\gradio\0c638a43698aa74a09b1e80685373e88a8db4c6c15f30293c5d9e35d52f74b69\sales_data.csv
+2025-03-23 13:58:29,328 - csv_analyzer - INFO - CSV loaded successfully: 9 rows, 4 columns
+2025-03-23 13:58:29,328 - csv_analyzer - INFO - Extracting dataframe information
+2025-03-23 13:59:13,645 - csv_analyzer - INFO - Application closed

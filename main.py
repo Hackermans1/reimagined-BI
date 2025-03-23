@@ -105,23 +105,6 @@ def answer_question(df, question):
     except Exception as e:
         return f"Error in LLM processing: {e}"
 
-def plot_graph(df, x_column, y_column, plot_type="line"):
-    """Generate a plot based on selected columns and plot type."""
-    try:
-        plt.figure()
-        if plot_type == "line":
-            plt.plot(df[x_column], df[y_column])
-        elif plot_type == "bar":
-            plt.bar(df[x_column], df[y_column])
-        elif plot_type == "scatter":
-            plt.scatter(df[x_column], df[y_column])
-        plt.xlabel(x_column)
-        plt.ylabel(y_column)
-        plt.title(f"{plot_type.capitalize()} Plot: {x_column} vs {y_column}")
-        plt.tight_layout()
-        return plt.gcf()
-    except Exception as e:
-        return f"Error generating plot: {str(e)}"
 
 # --------------------------------------------------------------
 # 4. Main Processing Function
@@ -137,12 +120,9 @@ def process_csv(file, question, x_column, y_column, plot_type):
     answer = answer_question(df, question)
 
     # Generate the plot if columns are selected
-    plot = None
-    if x_column and y_column:
-        plot = plot_graph(df, x_column, y_column, plot_type)
 
     # Return results
-    return answer, plot if isinstance(plot, plt.Figure) else None
+    return answer
 
 # --------------------------------------------------------------
 # 5. Gradio Interface
@@ -155,14 +135,9 @@ with gr.Blocks() as app:
         file_input = gr.File(label="Upload CSV File")
         question_input = gr.Textbox(label="Ask a Question")
 
-    with gr.Row():
-        x_column = gr.Dropdown(label="X-Axis Column", choices=[])
-        y_column = gr.Dropdown(label="Y-Axis Column", choices=[])
-        plot_type = gr.Radio(choices=["line", "bar", "scatter"], label="Plot Type", value="line")
-
+    
     with gr.Row():
         answer_output = gr.Textbox(label="Answer")
-        plot_output = gr.Plot(label="Graph")
 
     submit_button = gr.Button("Submit")
 
@@ -174,13 +149,13 @@ with gr.Blocks() as app:
             return gr.Dropdown(choices=columns), gr.Dropdown(choices=columns)
         return gr.Dropdown(choices=[]), gr.Dropdown(choices=[])
 
-    file_input.change(update_columns, inputs=file_input, outputs=[x_column, y_column])
+    file_input.change(update_columns, inputs=file_input, outputs=[])
 
     # Process inputs on button click
     submit_button.click(
         process_csv,
-        inputs=[file_input, question_input, x_column, y_column, plot_type],
-        outputs=[answer_output, plot_output]
+        inputs=[file_input, question_input],
+        outputs=[answer_output]
     )
 
 # Launch the app

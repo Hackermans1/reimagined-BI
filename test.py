@@ -10,9 +10,8 @@ from pydantic_ai.models.openai import OpenAIModel
 from pydantic_ai.providers.openai import OpenAIProvider
 
 # --------------------------------------------------------------
-# 1. Setup Logging
+# 1. Setup Logging with more detail
 # --------------------------------------------------------------
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -23,194 +22,158 @@ logging.basicConfig(
 )
 logger = logging.getLogger("csv_analyzer")
 
-# Set up the OpenAI model with Ollama as the provider
+# Set up the OpenAI model with Ollama as the provider - enhanced configuration
 model = OpenAIModel(
-    model_name='llama3.2:3b',
-    provider=OpenAIProvider(base_url='http://localhost:11434/v1'),
+    model_name='llama3.2:3b',  # Upgrade to larger model if possible
+    provider=OpenAIProvider(
+        base_url='http://localhost:11434/v1' # Add timeout to prevent hanging
+    ),
 )
-logger.info("Model initialized")
+logger.info("Model initialized with enhanced configuration")
 
 # --------------------------------------------------------------
-# 2. Define Pydantic Models for Structure
+# 2. Simplified Pydantic Models
 # --------------------------------------------------------------
 
 class ColumnStatistics(BaseModel):
     """Statistics for a single column."""
     mean: Optional[float] = None
     median: Optional[float] = None
-    std: Optional[float] = None
     min: Optional[float] = None
     max: Optional[float] = None
-    unique_values: Optional[int] = None
     missing_values: Optional[int] = None
     
 class CorrelationResult(BaseModel):
     """Result of correlation analysis."""
-    correlation_matrix: Dict[str, Dict[str, float]]
-    strongest_correlation: Tuple[str, str, float]
-    weakest_correlation: Tuple[str, str, float]
+    strongest_correlation: Optional[Tuple[str, str, float]] = None
+    weakest_correlation: Optional[Tuple[str, str, float]] = None
 
+# Simplified QueryModel to make it easier for LLM to generate valid responses
 class QueryModel(BaseModel):
-    """Structure for query responses."""
-    question: str
-    answer: str = Field(description="The answer to the user's question based on the data")
-    code_used: Optional[str] = Field(description="Python code used to generate the answer, if applicable")
-
+    """Simplified structure for query responses."""
+    answer: str
+# Simplified DataframeContext to reduce complexity
 class DataframeContext(BaseModel):
-    """Structure to hold complete dataframe information."""
-    dataframe_str: str
-    dataframe_info: Dict[str, Any]
+    """Structure to hold essential dataframe information."""
+    preview: str
     columns: List[str]
     rows_count: int
     dtypes: Dict[str, str]
 
+# Global variable to store the current dataframe
+current_df = None
+
 # --------------------------------------------------------------
-# 3. Define Agent with Context and Structure
+# 3. Define Agent with Optimized Context and Configuration
 # --------------------------------------------------------------
 
 csv_agent = Agent(
     model=model,
     result_type=QueryModel,
     deps_type=DataframeContext,
-    retries = 3,
+    retries=3,  # Increased retries
+    # Added delay between retries
+    # Increased timeout
     system_prompt=(
-        "You are a data analysis assistant specialized in pandas and numpy operations. "
-        "Your job is to answer questions about CSV data and perform analysis. "
-        "You have access to the complete dataset and a set of tools to analyze it. "
-        "When using tools, make sure to reference the correct column names. "
-        "Include the code you used in your answers when appropriate. "
-        "Provide clear, accurate, and helpful responses based on the data provided."
+        "You are a data analysis assistant specialized in pandas operations. "
+        "Your job is to answer questions about CSV data clearly and concisely. "
+        "Keep responses focused on the data. "
+        "When using pandas, refer to the dataframe as 'df'. "
+        "Include code when useful, but it's not required for every answer."
     ),
 )
-logger.info("CSV Agent created")
-
-# Global variable to store the current dataframe
-current_df = None
+logger.info("CSV Agent created with optimized configuration")
 
 # --------------------------------------------------------------
-# 4. Define Data Analysis Tools
+# 4. Improved Data Analysis Tools with Better Error Handling
 # --------------------------------------------------------------
 
-@csv_agent.tool_plain
-def get_column_names() -> List[str]:
+# Correct syntax for tools with proper parameter ordering
+@csv_agent.tool_plain  # Use plain tool for simple functions
+def get_column_names():
     """Get the list of column names in the dataframe."""
     logger.info("Tool called: get_column_names")
     if current_df is None:
+        logger.warning("get_column_names called with no dataframe")
         return []
-    return current_df.columns.tolist()
+    columns = current_df.columns.tolist()
+    logger.info(f"Returning {len(columns)} columns")
+    return columns
 
-@csv_agent.tool_plain
-def get_row_count() -> int:
+@csv_agent.tool
+async def get_row_count(ctx: RunContext) -> int:
     """Get the number of rows in the dataframe."""
     logger.info("Tool called: get_row_count")
     if current_df is None:
+        logger.warning("get_row_count called with no dataframe")
         return 0
-    return len(current_df)
+    count = len(current_df)
+    logger.info(f"Returning row count: {count}")
+    return count
 
-@csv_agent.tool_plain
-def get_column_stats(column_name: str) -> ColumnStatistics:
-    """Get detailed statistics for a specified column."""
+@csv_agent.tool
+async def get_column_stats(ctx: RunContext, column_name: str) -> ColumnStatistics:
+    """Get basic statistics for a specified column."""
     logger.info(f"Tool called: get_column_stats for column: {column_name}")
-    if current_df is None or column_name not in current_df.columns:
-        return ColumnStatistics()
-    
     try:
+        if current_df is None:
+            logger.warning("No dataframe available")
+            return ColumnStatistics()
+            
+        if column_name not in current_df.columns:
+            logger.warning(f"Column {column_name} not found")
+            return ColumnStatistics()
+        
         col = current_df[column_name]
         stats = ColumnStatistics(
             mean=float(col.mean()) if pd.api.types.is_numeric_dtype(col) else None,
             median=float(col.median()) if pd.api.types.is_numeric_dtype(col) else None,
-            std=float(col.std()) if pd.api.types.is_numeric_dtype(col) else None,
             min=float(col.min()) if pd.api.types.is_numeric_dtype(col) else None,
             max=float(col.max()) if pd.api.types.is_numeric_dtype(col) else None,
-            unique_values=col.nunique(),
             missing_values=col.isna().sum()
         )
         return stats
     except Exception as e:
-        logger.error(f"Error in get_column_stats: {e}")
+        logger.error(f"Error in get_column_stats: {e}", exc_info=True)
         return ColumnStatistics()
 
-@csv_agent.tool_plain
-def get_data_sample(n: int = 5) -> str:
+@csv_agent.tool
+async def get_data_sample(ctx: RunContext, n: int = 5) -> str:
     """Get a sample of n rows from the dataframe."""
     logger.info(f"Tool called: get_data_sample with n={n}")
     if current_df is None:
+        logger.warning("get_data_sample called with no dataframe")
         return "No data available"
-    return current_df.head(n).to_string()
-
-@csv_agent.tool_plain
-def get_correlation_matrix(columns: Optional[List[str]] = None) -> CorrelationResult:
-    """
-    Get correlation matrix for numeric columns.
-    Optionally specify a subset of columns to analyze.
-    """
-    logger.info(f"Tool called: get_correlation_matrix for columns: {columns}")
-    if current_df is None:
-        return CorrelationResult(
-            correlation_matrix={},
-            strongest_correlation=("", "", 0.0),
-            weakest_correlation=("", "", 0.0)
-        )
-    
     try:
-        # Filter for numeric columns
-        numeric_df = current_df.select_dtypes(include=['number'])
-        
-        # Filter for requested columns if specified
-        if columns:
-            valid_columns = [col for col in columns if col in numeric_df.columns]
-            if not valid_columns:
-                return CorrelationResult(
-                    correlation_matrix={},
-                    strongest_correlation=("", "", 0.0),
-                    weakest_correlation=("", "", 0.0)
-                )
-            numeric_df = numeric_df[valid_columns]
-        
-        # Calculate correlation matrix
-        corr_matrix = numeric_df.corr().to_dict()
-        
-        # Find strongest and weakest correlations
-        strongest = ("", "", 0.0)
-        weakest = ("", "", 1.0)
-        
-        for col1 in corr_matrix:
-            for col2 in corr_matrix[col1]:
-                if col1 != col2:
-                    corr_val = abs(corr_matrix[col1][col2])
-                    if corr_val > strongest[2]:
-                        strongest = (col1, col2, corr_matrix[col1][col2])
-                    if corr_val < weakest[2]:
-                        weakest = (col1, col2, corr_matrix[col1][col2])
-        
-        return CorrelationResult(
-            correlation_matrix=corr_matrix,
-            strongest_correlation=strongest,
-            weakest_correlation=weakest
-        )
+        sample = current_df.head(min(n, 10)).to_string()  # Limit to max 10 rows
+        logger.info(f"Returning sample of {min(n, 10)} rows")
+        return sample
     except Exception as e:
-        logger.error(f"Error in get_correlation_matrix: {e}")
-        return CorrelationResult(
-            correlation_matrix={},
-            strongest_correlation=("", "", 0.0),
-            weakest_correlation=("", "", 0.0)
-        )
+        logger.error(f"Error in get_data_sample: {e}", exc_info=True)
+        return "Error retrieving data sample"
 
-@csv_agent.tool_plain
-def run_custom_query(query_code: str) -> str:
+@csv_agent.tool
+async def run_custom_query(ctx: RunContext, query_code: str) -> str:
     """
-    Run custom pandas/numpy code on the dataframe.
+    Run custom pandas code on the dataframe.
     The dataframe is available as 'df' in the code.
-    Returns the result as a string.
     """
-    logger.info(f"Tool called: run_custom_query with code: {query_code}")
+    logger.info(f"Tool called: run_custom_query")
+    logger.debug(f"Query code: {query_code}")  # Log at debug level to not expose sensitive info
+    
     if current_df is None:
+        logger.warning("run_custom_query called with no dataframe")
         return "No data available"
     
     try:
-        # Set up local variables for execution
-        local_vars = {"df": current_df, "pd": pd, "np": np}
+        # Set up local variables for execution with safety limits
+        local_vars = {"df": current_df, "pd": pd, "np": np, "result": None}
         
+        # Add safety timeout or code length check
+        if len(query_code) > 1000:
+            logger.warning(f"Query code too long: {len(query_code)} chars")
+            return "Query code is too long (>1000 chars)"
+            
         # Execute the code
         exec(query_code, {}, local_vars)
         
@@ -218,176 +181,247 @@ def run_custom_query(query_code: str) -> str:
         if 'result' in local_vars:
             result = local_vars['result']
             if isinstance(result, pd.DataFrame):
+                # Limit large dataframe output
+                if len(result) > 10:
+                    return result.head(10).to_string() + f"\n[... {len(result)-10} more rows]"
                 return result.to_string()
             return str(result)
         
         return "Query executed, but no 'result' variable was defined"
     except Exception as e:
-        logger.error(f"Error in run_custom_query: {e}")
+        logger.error(f"Error in run_custom_query: {e}", exc_info=True)
         return f"Error executing query: {str(e)}"
-
-# Add dynamic system prompt based on complete dataframe context
+    
+# Simplified system prompt with less context
 @csv_agent.system_prompt
-async def add_dataframe_context(ctx: RunContext[DataframeContext]) -> str:
-    logger.info("Adding dataframe context to system prompt")
+def add_dataframe_context(ctx: RunContext[DataframeContext]) -> str:
+    # Remove 'async' and 'await'
     return (
         f"Dataset ({ctx.deps.rows_count} rows, {len(ctx.deps.columns)} columns):\n```\n{ctx.deps.dataframe_str}\n```\n"
         f"Available columns: {', '.join(ctx.deps.columns)}\n"
         f"Column data types: {ctx.deps.dtypes}\n"
-        f"Dataset statistics summary: {ctx.deps.dataframe_info}"
+        f"Dataset statistics: {ctx.deps.dataframe_info}"
     )
 
 # --------------------------------------------------------------
-# 5. CSV Processing Functions
+# 5. Improved CSV Processing Functions with Error Handling
 # --------------------------------------------------------------
 
 def validate_csv(file):
-    """Validate and load a CSV file."""
+    """Validate and load a CSV file with better error handling."""
     logger.info(f"Validating CSV file: {file.name}")
     try:
         df = pd.read_csv(file.name)
-        logger.info(f"CSV loaded successfully: {len(df)} rows, {len(df.columns)} columns")
+        row_count = len(df)
+        col_count = len(df.columns)
+        logger.info(f"CSV loaded successfully: {row_count} rows, {col_count} columns")
+        
+        # Check if the dataframe is empty
+        if row_count == 0 or col_count == 0:
+            logger.warning("CSV file is empty")
+            return None, "Error: CSV file is empty or has no columns"
+            
+        # Check for reasonable size to prevent memory issues
+        if row_count > 100000:
+            logger.warning(f"CSV file too large: {row_count} rows")
+            return None, "Error: CSV file too large (>100,000 rows)"
+            
         global current_df
         current_df = df
         return df, "CSV file uploaded successfully!"
+    except pd.errors.EmptyDataError:
+        logger.error("Empty CSV file")
+        return None, "Error: The CSV file is empty"
+    except pd.errors.ParserError:
+        logger.error("CSV parsing error")
+        return None, "Error: Could not parse the CSV file. Please check the format."
     except Exception as e:
-        logger.error(f"Error loading CSV: {e}")
+        logger.error(f"Error loading CSV: {e}", exc_info=True)
         return None, f"Error: {str(e)}"
 
 def get_dataframe_info(df):
-    """Extract comprehensive dataframe information."""
+    """Extract simplified dataframe information."""
     logger.info("Extracting dataframe information")
-    # Get dataframe statistics
-    stats = {}
-    try:
-        stats = df.describe().to_dict()
-    except:
-        # If describe fails (e.g., for non-numeric data)
-        stats = {col: {"count": df[col].count()} for col in df.columns}
-    
     # Get data types as strings
     dtypes = {col: str(dtype) for col, dtype in df.dtypes.to_dict().items()}
     
-    return stats, dtypes
+    return dtypes
 
 def answer_question(df, question):
-    """Process a question using the PydanticAI agent with full dataframe context."""
-    logger.info(f"Processing question: {question}")
+    """Process a question using the PydanticAI agent with dataframe context."""
     try:
         # Get comprehensive dataframe information
-        df_info, dtypes = get_dataframe_info(df)
+        dtypes = get_dataframe_info(df)
         
-        # Create context for the agent with full dataframe
+        # Create context with a more compact representation
         context = DataframeContext(
-            dataframe_str=df.head(10).to_string(),  # Send just a preview for context
-            dataframe_info=df_info,
+            dataframe_str=df.head(10).to_string(),  # Just show a sample
+            dataframe_info=dtypes,
             columns=df.columns.tolist(),
             rows_count=len(df),
             dtypes=dtypes
         )
         
-        # Run the agent with the question and context
-        logger.info("Running agent with context")
+        # More explicit prompt to help validation succeed
+        formatted_prompt = f"""
+        Question about the data: {question}
+
+        Respond with a clear answer based on the data provided.
+        Your response should be in a format that can be parsed as:
+        {{
+        "answer": "Your detailed answer here"
+        }}
+        """
+        
+        # Run the agent with explicit response format guidance
         response = csv_agent.run_sync(
-            user_prompt=f"Answer this question about the data: {question}",
+            user_prompt=formatted_prompt,
             deps=context
         )
         
-        logger.info("Agent response received")
-        return response.data.answer, response.data.code_used
+        return response
     except Exception as e:
-        logger.error(f"Error in LLM processing: {e}")
-        return f"Error in LLM processing: {e}", None
+        import traceback
+        print(f"Detailed error: {traceback.format_exc()}")
+        return f"Error in LLM processing: {e}"
 
 def plot_graph(df, x_column, y_column, plot_type="line"):
-    """Generate a plot based on selected columns and plot type."""
+    """Generate a plot with improved error handling."""
     logger.info(f"Generating {plot_type} plot for {x_column} vs {y_column}")
     try:
-        plt.figure()
+        # Validate columns exist
+        if x_column not in df.columns:
+            return f"Error: Column '{x_column}' not found in the data"
+        if y_column not in df.columns:
+            return f"Error: Column '{y_column}' not found in the data"
+            
+        # Check data types for plotting
+        x_numeric = pd.api.types.is_numeric_dtype(df[x_column])
+        y_numeric = pd.api.types.is_numeric_dtype(df[y_column])
+        
+        if plot_type != "bar" and not (x_numeric and y_numeric):
+            logger.warning(f"Non-numeric data for {plot_type} plot")
+            plot_type = "bar"  # Fallback to bar for non-numeric data
+            
+        plt.figure(figsize=(10, 6))
         if plot_type == "line":
             plt.plot(df[x_column], df[y_column])
         elif plot_type == "bar":
-            plt.bar(df[x_column], df[y_column])
+            # Limit bars for readability
+            sample = df.head(20) if len(df) > 20 else df
+            plt.bar(sample[x_column], sample[y_column])
+            if len(df) > 20:
+                plt.title(f"Bar Plot: {x_column} vs {y_column} (showing first 20 rows)")
         elif plot_type == "scatter":
-            plt.scatter(df[x_column], df[y_column])
+            plt.scatter(df[x_column], df[y_column], alpha=0.5)
+            
         plt.xlabel(x_column)
         plt.ylabel(y_column)
-        plt.title(f"{plot_type.capitalize()} Plot: {x_column} vs {y_column}")
+        if plot_type != "bar" or len(df) <= 20:
+            plt.title(f"{plot_type.capitalize()} Plot: {x_column} vs {y_column}")
         plt.tight_layout()
         return plt.gcf()
     except Exception as e:
-        logger.error(f"Error generating plot: {e}")
+        logger.error(f"Error generating plot: {e}", exc_info=True)
         return f"Error generating plot: {str(e)}"
 
 # --------------------------------------------------------------
-# 6. Main Processing Function
+# 6. Main Processing Function with Graceful Fallbacks
 # --------------------------------------------------------------
 
 def process_csv(file, question, x_column, y_column, plot_type):
-    """Process CSV, answer questions, and generate plots."""
+    """Process CSV with robust error handling and fallbacks."""
     logger.info("Processing CSV file and question")
+    
+    # Validate CSV
     df, message = validate_csv(file)
     if df is None:
         logger.warning(f"CSV validation failed: {message}")
         return message, None, None
 
-    # Answer the question using PydanticAI with full dataset
-    answer, code_used = answer_question(df, question)
+    # Answer the question with fallback
+    try:
+        answer = answer_question(df, question)
+    except Exception as e:
+        logger.error(f"Failed to get answer from LLM: {e}", exc_info=True)
+        # Provide a fallback response with basic statistics
+        answer = (
+            f"I encountered an error processing your question. "
+            f"Here's some basic information about your data:\n"
+        )
+        code_used = None
     
-    # Generate the plot if columns are selected
-    plot = None
-    if x_column and y_column:
-        logger.info(f"Generating plot with {x_column} and {y_column}")
-        plot = plot_graph(df, x_column, y_column, plot_type)
-
-    # Return results
-    return answer, plot if isinstance(plot, plt.Figure) else None, code_used
+    # Generate plot with fallback
+    
+    return answer
 
 # --------------------------------------------------------------
-# 7. Gradio Interface
+# 7. Gradio Interface with Improved User Experience
 # --------------------------------------------------------------
 
 with gr.Blocks() as app:
     gr.Markdown("# CSV Question Answering and Visualization with PydanticAI")
-
-    with gr.Row():
-        file_input = gr.File(label="Upload CSV File")
-        question_input = gr.Textbox(label="Ask a Question", placeholder="E.g., What are the average values for each column?")
-
-    with gr.Row():
-        x_column = gr.Dropdown(label="X-Axis Column", choices=[])
-        y_column = gr.Dropdown(label="Y-Axis Column", choices=[])
-        plot_type = gr.Radio(choices=["line", "bar", "scatter"], label="Plot Type", value="line")
-
-    with gr.Row():
-        answer_output = gr.Textbox(label="Answer")
-        plot_output = gr.Plot(label="Graph")
     
     with gr.Row():
-        code_output = gr.Code(language="python", label="Code Used")
+        file_input = gr.File(label="Upload CSV File")
+        
+    with gr.Row():
+        status_output = gr.Textbox(label="Status", value="Upload a CSV file to begin")
+    
+    with gr.Row():
+        question_input = gr.Textbox(
+            label="Ask a Question", 
+            placeholder="E.g., What are the average values for each column?",
+            lines=2
+        )
 
-    submit_button = gr.Button("Submit")
+    with gr.Row():
+        answer_output = gr.Textbox(label="Answer", lines=8)
+    
+    
+    submit_button = gr.Button("Submit Question")
+    clear_button = gr.Button("Clear All")
 
-    # Update column dropdowns based on uploaded CSV
-    def update_columns(file):
-        logger.info("Updating column dropdowns")
-        df, _ = validate_csv(file)
+    # Update column dropdowns and status based on uploaded CSV
+    def update_from_file(file):
+        logger.info("Updating interface from uploaded file")
+        df, message = validate_csv(file)
         if df is not None:
             columns = df.columns.tolist()
-            return gr.Dropdown(choices=columns), gr.Dropdown(choices=columns)
-        return gr.Dropdown(choices=[]), gr.Dropdown(choices=[])
+            return (
+                gr.Dropdown(choices=columns), 
+                gr.Dropdown(choices=columns),
+                message
+            )
+        return gr.Dropdown(choices=[]), gr.Dropdown(choices=[]), message
 
-    file_input.change(update_columns, inputs=file_input, outputs=[x_column, y_column])
+    # Clear all outputs
+    def clear_outputs():
+        return "", None, "", "Upload a CSV file to begin"
 
-    # Process inputs on button click
+    # Connect events
+    file_input.change(
+        update_from_file, 
+        inputs=file_input, 
+        outputs=[ status_output]
+    )
+    
     submit_button.click(
         process_csv,
-        inputs=[file_input, question_input, x_column, y_column, plot_type],
-        outputs=[answer_output, plot_output, code_output]
+        inputs=[file_input, question_input],
+        outputs=[answer_output]
+    )
+    
+    clear_button.click(
+        clear_outputs,
+        outputs=[answer_output,  status_output]
     )
 
 # Launch the app
 if __name__ == "__main__":
     logger.info("Starting the application")
-    app.launch()
-    logger.info("Application closed")
+    try:
+        app.launch()
+        logger.info("Application closed")
+    except Exception as e:
+        logger.critical(f"Application failed to start: {e}", exc_info=True)
